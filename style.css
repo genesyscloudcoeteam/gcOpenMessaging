@@ -204,7 +204,7 @@ html, body {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
-    border: 1rem solid;
+    border: 2px solid;
     border-color: #fff;
 }
 
