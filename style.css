@@ -211,7 +211,7 @@ html, body {
     width: 100%;
     height: auto; /* Maintains aspect ratio */
     max-width: 100%; /* Ensures video fits inside the container */
-    max-height: 400px; /* Restricts height to prevent overflow */
+    max-height: 500px; /* Restricts height to prevent overflow */
     object-fit: contain; /* Ensures the video fits properly */
 }
 
