@@ -201,7 +201,7 @@ html, body {
     width: 100%;
     max-width: 960px; /* 50% of the original video width */
     max-height: 800px
-    aspect-ratio: 1920 / 750; /* Maintains the original video aspect ratio */
+    aspect-ratio: 1920 / 800; /* Maintains the original video aspect ratio */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
