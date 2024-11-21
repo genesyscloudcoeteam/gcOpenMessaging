@@ -204,6 +204,8 @@ html, body {
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    border: 1;
+    border-color: #fff;
 }
 
 /* Responsive Video */
