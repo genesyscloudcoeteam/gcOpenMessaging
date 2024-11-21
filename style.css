@@ -1,0 +1,507 @@
+/* General Styling */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+/* Body and HTML Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensures full height for flex layout */
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+/* Navigation Bar */
+#navbar {
+    background-color: #fff;
+    padding: 1em 2em;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navbar Items */
+#navbar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+}
+
+#navbar li {
+    display: inline;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#navbar a:hover {
+    color: #160b09;
+}
+
+/* Position the switch to the far right */
+.switch {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+    margin-right: 2em; /* Adds margin to align it to the right side */
+}
+
+.switch input[type="checkbox"] {
+    display: none;
+}
+
+.switch .slider {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.switch input[type="checkbox"]:checked + .slider {
+    background-color: #160b09;
+}
+
+.switch input[type="checkbox"]:checked + .slider::before {
+    transform: translateX(20px);
+}
+
+/* Hero Section */
+#hero {
+    background-image: url('images/genesys-coe-team-banner.png');
+    background-size: cover;
+    background-position: top left;
+    color: #fff;
+    height: 183px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.7em;
+}
+
+/* Footer Styling */
+.footer {
+    background-image: url('images/genesys-coe-team-footer.png');
+    background-color: #160b09;
+    text-align: center;
+    padding: 39px;
+    color: #fff;
+    background-repeat: no-repeat;
+}
+
+.footer img {
+    width: 100%;
+    height: 78px;
+}
+
+#hero h1 {
+    margin: 0;
+    padding: 5em;
+    max-width: 80%;
+    font-weight: 700;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    justify-content: left;
+}
+
+
+/* Content Section */
+.content {
+    flex: 1; /* Takes all available space between navbar and footer */
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    text-align: left;
+    padding: 1em;
+}
+
+#content h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-right: 2em;
+    text-align: left;
+    justify-content: left;
+}
+
+#content h3 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+    margin-right: 2em;
+    text-align: center;
+    justify-content: center;
+    color: #FF451A;
+}
+
+#content h4 {
+    font-size: 0.75em;
+    margin-bottom: 1em;
+    margin-top: 0.5em;
+    margin-right: 2em;
+    text-align: center;
+    justify-content: center;
+}
+
+/* Video Styling */
+.background-video {
+    width: 80%;
+    height: 67%;
+    object-fit: cover; /* Ensures the video covers the area without distortion */
+}
+
+/* Chat Widget Container */
+#chat-widget {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 320px;
+    height: 420px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Chat Widget Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chat Header */
+#chat-header {
+    background-color: #160b09;
+    color: #ffffff;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+#close-chat {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* Chat Messages Area */
+#chat-messages {
+    flex-grow: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background-color: #f7f8fa;
+    font-size: 12px;
+}
+
+
+/* Chat Message Styles */
+.message {
+    max-width: 75%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 16px;
+    line-height: 1.4;
+    word-wrap: break-word; /* Ensure long text wraps properly */
+}
+
+/* Chat Message Text */
+.message span {
+    font-size: 14px; /* Adjust font size to match the message text */
+    line-height: 1.4; /* Improve readability */
+}
+
+/* User Message Styling */
+.user-message {
+    background-color: #e1f0ff;
+    color: #000;
+    align-self: flex-start;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center; /* Align avatar and text */
+    padding: 8px 10px;
+    margin-bottom: 8px;
+}
+
+/* Agent Message Styling */
+.agent-message {
+    background-color: #160b09;
+    color: #fff;
+    align-self: flex-end;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 16px;
+    text-align: left;
+    display: flex;
+    align-items: center; /* Align avatar and text */
+    padding: 8px 10px;
+    margin-bottom: 8px;
+}
+
+/* Chat Input Area */
+#chat-input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+    background-color: #ffffff;
+}
+
+/* Message Input */
+#user-message {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    outline: none;
+    resize: none;
+    font-family: 'Poppins', 'Roboto', sans-serif;
+}
+
+/* Chat Avatars */
+.avatar {
+    width: 24px; /* Adjust the size to be proportionate to text */
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 10px; /* Space between avatar and text */
+    vertical-align: middle;
+}
+
+/* Send Button */
+#send-button {
+    margin-left: 8px;
+    padding: 10px 15px;
+    background-color: #160b09;
+    color: #ffffff;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+#send-button:hover {
+    background-color: #331a14;
+}
+
+/* Chat Launcher */
+#chat-launcher {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #160b09;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+#chat-launcher:hover {
+    transform: scale(1.1);
+}
+
+#chat-launcher-icon {
+    color: #ffffff;
+    font-size: 24px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Input Fields */
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-content form label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.modal-content form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content form button {
+    background-color: #160b09;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.modal-content form button:hover {
+    background-color: #331a14;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    color: black;
+    cursor: pointer;
+}
+
+/* Shared Styling for Buttons */
+.button-style {
+    background-color: #160b09;
+    color: #fff;
+    padding: 0.6em 2em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    font-family: poppins, roboto, sans-serif;
+}
+
+.button-style:hover {
+    background-color: #331a14;
+}
+
+#register-btn {
+    background-color: #87ceeb;
+}
+
+#register-btn:hover {
+    background-color: #5bb6e4;
+}
+
+#signin-btn {
+    background-color: #160b09;
+}
+
+#signin-btn:hover {
+    background-color: #331a14
+}
+
+#new-session-btn:hover {
+    background-color: #331a14
+}
+
+/* Fix for body overflow with modals */
+body {
+    overflow: auto; /* Ensure scrolling works normally */
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #160b09;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #331a14;
+}
+
+/*<i class="fa-solid fa-user"></i>*/
+
+
+

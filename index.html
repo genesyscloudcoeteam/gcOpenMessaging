@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GC Open Messaging</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="x-icon">
+
+    <!-- Import Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Import Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+     <!-- Navigation Bar -->
+     <nav id="navbar">
+        
+        <!-- Custom Messaging Toggle -->
+        <label class="switch">
+            <span>Open Messaging</span>
+            <input type="checkbox" id="messaging-toggle">
+            <span class="slider"></span>
+        </label>
+
+        <!-- Clear Session Button -->
+        <button id="new-session-btn" class="button-style" onclick="endSession()">New Session</button>        
+
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero">
+        <h1>Genesys Cloud COE Team - Open Messaging Demo</h1>
+    </header>
+
+
+     <!-- Content Section -->
+     <div class="content">
+        <h2>High-level Architecture</h2>
+        <video autoplay muted loop class="background-video">
+            <source src="images/OpenMessagingHLA_Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <h3>DISCLAIMER</h3>
+        <h4>This architecture and the demonstration is intended to showcase the "art-of-the-possible" as it relates to Genesys Cloud.  In this case, leveraging
+            the Genesys Cloud Open Messaging API in combination with serverless resources in AWS, presents one of many potential approaches to implementing messaging
+            capability between users and agents without passing or sending the users' IP Address information to Genesys Cloud services. This architecture and technical demonstration
+            is not intended for production purposes but can serve as an example of how to implement this same concept or functionality for your use case(s).</h4>
+    </div>
+
+    <!-- Chat Launcher Button -->
+    <div id="chat-launcher" style="display: none;">
+        <i id="chat-launcher-icon" class="far fa-comment-alt"></i>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget">
+        <div id="chat-header">
+            Chat with Us
+            <button id="close-chat">&#10005;</button>
+        </div>
+        <div id="chat-messages">
+            <!-- Chat messages will appear here -->
+        </div>
+        <div id="chat-input-area">
+            <textarea id="user-message" rows="1" placeholder="Type your message..."></textarea>
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+    </footer>
+
+
+    <script src="script.js"></script>
+ 
+</body>
+
+</html>
+
+
+
+
+
+
+
