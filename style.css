@@ -210,7 +210,7 @@ html, body {
 #background-video {
     width: 100%;
     height: auto; /* Maintains aspect ratio */
-    max-width: 100%; /* Ensures video fits inside the container */
+    max-width: 99%; /* Ensures video fits inside the container */
     max-height: 500px; /* Restricts height to prevent overflow */
     object-fit: contain; /* Ensures the video fits properly */
 }
