@@ -195,8 +195,8 @@ html, body {
 
 /* Video Styling */
 #video-container {
-    width: 60%; /* Full width */
-    height: 30%; /* Full height */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
     display: flex;
     justify-content: center;
     align-items: center;
