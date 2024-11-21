@@ -213,8 +213,6 @@ html, body {
     max-width: 100%; /* Ensures video fits inside the container */
     max-height: 500px; /* Restricts height to prevent overflow */
     object-fit: contain; /* Ensures the video fits properly */
-    border: 2px solid;
-    border-color: #000;
 }
 
 /* Chat Widget Container */
