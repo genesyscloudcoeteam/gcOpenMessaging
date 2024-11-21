@@ -200,7 +200,8 @@ html, body {
     align-items: center;
     width: 100%;
     max-width: 960px; /* 50% of the original video width */
-    aspect-ratio: 1920 / 800; /* Maintains the original video aspect ratio */
+    max-height: 800px
+    aspect-ratio: 1920 / 750; /* Maintains the original video aspect ratio */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -210,8 +211,8 @@ html, body {
 #background-video {
     width: 100%;
     height: auto; /* Maintains aspect ratio */
-    max-width: 99%; /* Ensures video fits inside the container */
-    max-height: 500px; /* Restricts height to prevent overflow */
+    max-width: 100%; /* Ensures video fits inside the container */
+    max-height: 800px; /* Restricts height to prevent overflow */
     object-fit: contain; /* Ensures the video fits properly */
 }
 
