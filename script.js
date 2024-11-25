@@ -1,5 +1,4 @@
-const msg_lambdaUrl = "https://2us6kzkk9l.execute-api.eu-west-1.amazonaws.com/widget"; // Replace with your actual messaging Lambda URL
-//const msg_lambdaUrl = "https://skzqcyljniai3lyr2hdx6kaaga0btnmh.lambda-url.eu-west-1.on.aws/"; // Replace with your actual messaging Lambda URL
+const msg_lambdaUrl = "https://skzqcyljniai3lyr2hdx6kaaga0btnmh.lambda-url.eu-west-1.on.aws/"; // Replace with your actual messaging Lambda URL
 //const msg_lambdaUrl = "https://zqnsus7wen4dhahfw3vq5kt6vu0lztaq.lambda-url.eu-west-1.on.aws/"; // Original v1 gcOpenMessaing Lambda Function URL
 const reg_lambdaUrl = "https://km26rzjhrizvzt3gqqa7beqzv40dztid.lambda-url.eu-west-1.on.aws"; // Replace with your actual register Lambda URL
 const sin_lambdaUrl = "https://kcho7b5kbusvoggsi2hraazzmi0rjzzx.lambda-url.eu-west-1.on.aws"; // Replace with your actual signin Lambda URL
