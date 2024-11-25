@@ -199,9 +199,9 @@ html, body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 960px; /* 50% of the original video width */
-    max-height: 800px
-    aspect-ratio: 1920 / 800; /* Maintains the original video aspect ratio */
+    max-width: 900px; /* 50% of the original video width */
+    max-height: 800px;
+    aspect-ratio: 1422 / 800; /* Maintains the original video aspect ratio */
     margin: 0 auto;
     overflow: hidden;
     position: relative;
