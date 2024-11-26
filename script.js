@@ -199,3 +199,13 @@ function displayMessage(text, sender) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+// JavaScript to toggle the video container visibility
+document.getElementById('show-hla-btn').addEventListener('click', function () {
+    const videoContainer = document.getElementById('video-container');
+    // Toggle the display property
+    if (videoContainer.style.display === 'none' || videoContainer.style.display === '') {
+        videoContainer.style.display = 'flex'; // Show the video container
+    } else {
+        videoContainer.style.display = 'none'; // Hide the video container
+    }
+});
