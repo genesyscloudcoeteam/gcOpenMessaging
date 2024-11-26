@@ -80,6 +80,10 @@ html, body {
     transition: background-color 0.3s;
 }
 
+.switch .slider:hover {
+    background-color: #87ceeb;
+}
+
 .switch .slider::before {
     content: "";
     position: absolute;
