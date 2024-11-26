@@ -45,7 +45,9 @@
 
      <!-- Content Section -->
      <div class="content">
-        <h2>High-level Architecture</h2>
+        <!--<h2>High-level Architecture</h2> -->
+        <!-- Show HLA Button -->
+        <button id="show-hla-btn" class="button-style1" onclick="showhla()">Show High-level Architecture</button> 
         <div id="video-container">
             <video autoplay muted loop id="background-video">
                 <source src="images/OpenMessagingHLA_Video.mp4" type="video/mp4">
@@ -53,7 +55,7 @@
             </video>
         </div>
         <h3>DISCLAIMER</h3>
-        <h4>This architecture and the demonstration is intended to showcase the "art-of-the-possible" as it relates to Genesys Cloud.  In this case, leveraging
+        <h4>This basic architecture and demonstration is intended to showcase the "art-of-the-possible" as it relates to Genesys Cloud.  In this case, leveraging
             the Genesys Cloud Open Messaging API in combination with serverless resources in AWS, presents one of many potential approaches to implementing messaging
             capability between users and agents without passing or sending the users' IP Address information to Genesys Cloud services. This architecture and technical demonstration
             is not intended for production purposes but can serve as an example of how to implement this same concept or functionality for your use case(s).</h4>
@@ -67,7 +69,7 @@
     <!-- Chat Widget -->
     <div id="chat-widget">
         <div id="chat-header">
-            Chat with Us
+            Message Us
             <button id="close-chat">&#10005;</button>
         </div>
         <div id="chat-messages">
