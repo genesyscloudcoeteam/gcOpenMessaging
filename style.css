@@ -193,26 +193,46 @@ html, body {
     justify-content: center;
 }
 
-/* Video Container */
+/* Video Container 
 #video-container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 900px; /* 50% of the original video width */
-    max-height: 800px;
-    aspect-ratio: 1422 / 800; /* Maintains the original video aspect ratio */
+    max-width: 900px; /* 50% of the original video width 
+    max-height: 400px;
+    aspect-ratio: 1422 / 800; /* Maintains the original video aspect ratio 
     margin: 0 auto;
     overflow: hidden;
     position: relative;
 }
 
+/* Responsive Video 
+#background-video {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio 
+    max-width: 100%; /* Ensures video fits inside the container 
+    max-height: 400px; /* Restricts height to prevent overflow 
+    object-fit: contain; /* Ensures the video fits properly 
+} */
+
+/* Video Container */
+#video-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 100%; /* Ensures the container doesn't exceed the browser width */
+    aspect-ratio: 1400 / 636; /* Maintains the original aspect ratio */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
 /* Responsive Video */
 #background-video {
     width: 100%;
-    height: auto; /* Maintains aspect ratio */
-    max-width: 100%; /* Ensures video fits inside the container */
-    max-height: 800px; /* Restricts height to prevent overflow */
+    height: 100%;
     object-fit: contain; /* Ensures the video fits properly */
 }
 
@@ -359,7 +379,7 @@ html, body {
 }
 
 #send-button:hover {
-    background-color: #331a14;
+    background-color: #87ceeb;
 }
 
 /* Chat Launcher */
@@ -474,7 +494,28 @@ html, body {
 }
 
 .button-style:hover {
-    background-color: #331a14;
+    background-color: #87ceeb;
+    color: #000;
+}
+
+/* Shared Styling for Buttons */
+.button-style1 {
+    background-color: #160b09;
+    color: #fff;
+    padding: 0.6em 2em;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    font-family: poppins, roboto, sans-serif;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.button-style1:hover {
+    background-color: #87ceeb;
+    color: #000;
 }
 
 #register-btn {
@@ -494,7 +535,8 @@ html, body {
 }
 
 #new-session-btn:hover {
-    background-color: #331a14
+    background-color: #87ceeb;
+    color: #000;
 }
 
 /* Fix for body overflow with modals */
