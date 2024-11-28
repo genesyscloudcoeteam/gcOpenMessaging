@@ -22,9 +22,9 @@
 </head>
 
 <body>
-     <!-- Navigation Bar -->
-     <nav id="navbar">
-        
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+
         <!-- Custom Messaging Toggle -->
         <label class="switch">
             <span>Open Messaging</span>
@@ -32,8 +32,11 @@
             <span class="slider"></span>
         </label>
 
+        <!-- Sign In Button -->
+        <button id="signin-btn" class="button-style" onclick="openSignInModal()">Sign In</button>
+
         <!-- Clear Session Button -->
-        <button id="new-session-btn" class="button-style" onclick="endSession()">New Session</button>        
+        <button id="new-session-btn" class="button-style" onclick="endSession()">New Session</button>
 
     </nav>
 
@@ -42,12 +45,33 @@
         <h1>Genesys Cloud COE Team - Open Messaging Demo</h1>
     </header>
 
+    <!-- Sign In Modal -->
+    <div id="signin-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSignInModal()">&times;</span>
+            <form id="signin-form">
+                <label for="email">Email:</label>
+                <input type="email" id="signin-email" placeholder="Enter your email" required>
 
-     <!-- Content Section -->
-     <div class="content">
+                <label for="password">Password:</label>
+                <input type="password" id="signin-password" placeholder="Enter your password" required>
+
+                <button type="submit">Sign In</button>
+            </form>
+            <!-- Processing Indicator -->
+            <div id="signin-processing" style="display: none;">
+                <p>Processing...</p>
+                <div class="spinner"></div>
+            </div>
+            <p id="signin-message"></p>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
         <!--<h2>High-level Architecture</h2> -->
         <!-- Show HLA Button -->
-        <button id="show-hla-btn" class="button-style1" onclick="showhla()">Show High-level Architecture</button> 
+        <button id="show-hla-btn" class="button-style1" onclick="showhla()">Show High-level Architecture</button>
         <div id="video-container">
             <video autoplay muted loop id="background-video">
                 <source src="images/OpenMessagingHLA_Video.mp4" type="video/mp4">
@@ -55,10 +79,14 @@
             </video>
         </div>
         <h3>DISCLAIMER</h3>
-        <h4>This basic architecture and demonstration is intended to showcase the "art-of-the-possible" as it relates to Genesys Cloud.  In this case, leveraging
-            the Genesys Cloud Open Messaging API in combination with serverless resources in AWS, presents one of many potential approaches to implementing messaging
-            capability between users and agents without passing or sending the users' IP Address information to Genesys Cloud services. This architecture and technical demonstration
-            is not intended for production purposes but can serve as an example of how to implement this same concept or functionality for your use case(s).</h4>
+        <h4>This basic architecture and demonstration is intended to showcase the "art-of-the-possible" as it relates to
+            Genesys Cloud. In this case, leveraging
+            the Genesys Cloud Open Messaging API in combination with serverless resources in AWS, presents one of many
+            potential approaches to implementing messaging
+            capability between users and agents without passing or sending the users' IP Address information to Genesys
+            Cloud services. This architecture and technical demonstration
+            is not intended for production purposes but can serve as an example of how to implement this same concept or
+            functionality for your use case(s).</h4>
     </div>
 
     <!-- Chat Launcher Button -->
@@ -88,14 +116,7 @@
 
 
     <script src="script.js"></script>
- 
+
 </body>
 
 </html>
-
-
-
-
-
-
-

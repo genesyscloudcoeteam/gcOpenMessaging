@@ -1,7 +1,7 @@
 const msg_lambdaUrl = "https://skzqcyljniai3lyr2hdx6kaaga0btnmh.lambda-url.eu-west-1.on.aws/"; // Replace with your actual messaging Lambda URL
 //const msg_lambdaUrl = "https://zqnsus7wen4dhahfw3vq5kt6vu0lztaq.lambda-url.eu-west-1.on.aws/"; // Original v1 gcOpenMessaing Lambda Function URL
 const reg_lambdaUrl = "https://km26rzjhrizvzt3gqqa7beqzv40dztid.lambda-url.eu-west-1.on.aws"; // Replace with your actual register Lambda URL
-const sin_lambdaUrl = "https://kcho7b5kbusvoggsi2hraazzmi0rjzzx.lambda-url.eu-west-1.on.aws"; // Replace with your actual signin Lambda URL
+const signinLambdaUrl = "https://egqvlsgf4gy7usnzp4zyd2tl7i0yrmww.lambda-url.eu-west-1.on.aws"; // Replace with your Lambda URL
 
 // Open and close modals
 
@@ -207,5 +207,71 @@ document.getElementById('show-hla-btn').addEventListener('click', function () {
         videoContainer.style.display = 'flex'; // Show the video container
     } else {
         videoContainer.style.display = 'none'; // Hide the video container
+    }
+});
+
+// Open the Sign In Modal
+function openSignInModal() {
+    document.getElementById('signin-modal').style.display = 'flex';
+}
+
+// Close the Sign In Modal
+function closeSignInModal() {
+    document.getElementById('signin-modal').style.display = 'none';
+    document.getElementById('signin-message').textContent = ''; // Clear any previous messages
+}
+
+// Handle Sign In Form Submission
+document.getElementById('signin-form').addEventListener('submit', async function (event) {
+    event.preventDefault(); // Prevent the form from reloading the page
+
+    const email = document.getElementById('signin-email').value.trim();
+    const password = document.getElementById('signin-password').value.trim(); // Not used in the Lambda for now
+
+    if (!email) {
+        document.getElementById('signin-message').textContent = 'Email is required.';
+        return;
+    }
+
+    const processingIndicator = document.getElementById('signin-processing');
+    const messageElement = document.getElementById('signin-message');
+    const submitButton = event.target.querySelector('button[type="submit"]');
+
+    // Show processing indicator and disable submit button
+    processingIndicator.style.display = 'block';
+    submitButton.disabled = true;
+    messageElement.textContent = ''; // Clear any previous messages
+
+    try {
+        const response = await fetch(signinLambdaUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email })
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.result === "success") {
+            // On success
+            closeSignInModal();
+            const signinBtn = document.getElementById('signin-btn');
+            signinBtn.disabled = true;
+            signinBtn.textContent = 'Signed In';
+            signinBtn.style.backgroundColor = '#87ceeb'; // Change background color
+            signinBtn.style.color = '#000'; // Change label/text color
+            localStorage.setItem("userId", result.uuId); // Update userId in local storage
+            userId = result.uuId;
+            alert("Sign In Successful");
+        } else {
+            // On failure
+            messageElement.textContent = `Error: ${result.message}`;
+        }
+    } catch (error) {
+        console.error("Sign In Error:", error);
+        messageElement.textContent = "An unexpected error occurred. Please try again.";
+    } finally {
+        // Hide processing indicator and re-enable submit button
+        processingIndicator.style.display = 'none';
+        submitButton.disabled = false;
     }
 });
