@@ -535,7 +535,8 @@ html, body {
 }
 
 #signin-btn:hover {
-    background-color: #331a14
+    background-color: #87ceeb;
+    color: #000;
 }
 
 #new-session-btn:hover {
